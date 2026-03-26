@@ -1,0 +1,38 @@
+CONCLUSIONES Y HALLAZGOS - EJERCICIO 2 (API DEMOBLAZE CON KARATE)
+==================================================================
+
+1. Alcance validado
+-------------------
+Se probaron los dos servicios solicitados por la tarea:
+- /signup
+- /login
+
+Se ejecutaron los 4 escenarios obligatorios:
+- Crear usuario nuevo.
+- Crear usuario existente.
+- Login correcto.
+- Login incorrecto.
+
+2. Hallazgos funcionales
+------------------------
+- El endpoint signup responde HTTP 200 con cadena vacia ("") cuando el usuario se crea correctamente.
+- Al intentar registrar un usuario existente, signup mantiene HTTP 200 y devuelve errorMessage.
+- El endpoint login responde HTTP 200 con Auth_token cuando credenciales son validas.
+- Con password incorrecto, login mantiene HTTP 200 y devuelve errorMessage.
+
+3. Hallazgos tecnicos relevantes
+--------------------------------
+- La API reporta errores de negocio en el cuerpo de la respuesta, no mediante 4xx/5xx.
+- Para mantener reproducibilidad, se usan usernames unicos por ejecucion.
+- Es clave validar status y contenido de respuesta para evitar falsos positivos.
+
+4. Evidencia generada
+---------------------
+- Feature de Karate con los 4 casos requeridos.
+- Runner JUnit5 para ejecucion automatizada.
+- Script run.ps1 y wrapper run.cmd para reproduccion simple.
+- Reportes Karate HTML/JSON y logs de ejecucion en carpeta reports.
+
+5. Conclusion final
+-------------------
+La implementacion cumple tecnicamente con el Ejercicio 2 y deja evidencia reproducible de entradas y salidas para cada caso solicitado.
