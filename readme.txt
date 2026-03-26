@@ -23,7 +23,7 @@ El feature automatizado cubre los casos obligatorios de la consigna:
 
 3. Stack tecnológico
 --------------------
-- Java 11
+- Java 11 o superior
 - Maven (con Maven Wrapper incluido)
 - Karate
 - JUnit Platform (JUnit 5)
